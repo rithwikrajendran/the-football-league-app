@@ -138,7 +138,7 @@ def compute_player_stats(df):
     ]]
 
 def main():
-    st.title("The ASDA Weekly Football League - 2024 League Table")
+    st.title("The Football League - 2024 - League Table")
 
     # File path to the Excel file
     excel_file = "footy_stats_24_25.xlsx"  # Replace this with the path to your Excel file
