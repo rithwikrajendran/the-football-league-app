@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load data from an Excel file
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=30)
 def load_data(file_path):
     """
     Load data from an Excel file. Cache it with a TTL to refresh periodically.
@@ -109,7 +109,7 @@ def compute_player_stats(df):
     player_stats['PPG'] = round(player_stats['points'] / player_stats['matches_played'], 3)
     player_stats['Win %'] = round((player_stats['wins'] / player_stats['matches_played']) * 100, 3)
     player_stats['Qualify Status'] = player_stats['matches_played'].apply(
-        lambda x: "Q" if x/total_matches >= 0.3 else "N"
+        lambda x: "Q" if x/total_matches >= 0.4 else "N"
     )
     
     player_stats = player_stats.sort_values(
